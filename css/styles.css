@@ -488,8 +488,8 @@ img {
 .inner-header {
     background: var(--primary-color);
     color: #fff;
-    height: 250px;
-    padding-top: 8rem;
+    height: 150px;
+    padding-top: 5rem;
 }
 
 .inner-header h1 {
@@ -500,8 +500,12 @@ img {
 
 /* Contact Form */
 
+.contact-form.section {
+    margin: 2rem 4rem 0 0;
+}
+
 .contact-form p {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .background-alternate{
@@ -557,6 +561,19 @@ img {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+.contact-details{
+    display: flex;
+    align-items: center;    
+}
+
+.contact-details i{
+    color: red;
+}
+
+.contact-details p {
+    margin: 10px;
 }
 
 /* Media Queries */
