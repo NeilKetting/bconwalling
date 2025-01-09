@@ -206,7 +206,7 @@ img {
 
 /* Hero */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #000 url('../images/bcon_hero_1.png') center center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), #000 url('../images/bcon_bck.jpg') center center/cover no-repeat;
     padding: 10rem 2rem 4rem 2rem;
     color: #fff;
     overflow-x: hidden;
