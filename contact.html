@@ -32,7 +32,7 @@
 							<a href="index.html">Home</a>
 						</li>
 						<li>
-							<a href="index.html#about">Company Profile</a>
+							<a href="index.html#about">Profile</a>
 						</li>
 						<li>
 							<a href="index.html#service">Services</a>
@@ -41,7 +41,7 @@
 							<a href="index.html#projects">Projects</a>
 						</li>
 						<li>
-							<a href="contact.html">Contact Us</a>
+							<a href="contact.html">Contact</a>
 						</li>
 						<li>
 							<a
@@ -123,7 +123,14 @@
 			<div class="container-sm">
 				<div class="contact-details">
 					<i class="fa-solid fa-phone"></i>
-					<p>+27 76 450 2402 / +27 64 668 3122</p>
+					<h3>Tyrone Pienaar</h3>
+					<p>+27 76 450 2402</p>
+				</div>
+
+				<div class="contact-details">
+					<i class="fa-solid fa-phone"></i>
+					<h3>Reynier Oberholzer</h3>
+					<p>+27 64 501 9807</p>
 				</div>
 
 				<div class="contact-details">
@@ -133,7 +140,7 @@
 
 				<div class="contact-details">
 					<i class="fa-solid fa-envelope"></i>
-					<p>info@bconwalling.co.za</p>
+					<h3>info@bconwalling.co.za</h3>
 				</div>
 
 				<div class="contact-details">
@@ -141,15 +148,31 @@
 					<p>192 Uys St, Rynfield AH, Benoni, 1514</p>
 				</div>
 
-				<form>
-					<input type="text" name="name" placeholder="Name" />
-					<input type="email" name="email" placeholder="Email" />
-					<textarea
-						name="message"
-						name="message"
-						placeholder="Message"
-					></textarea>
-					<button type="submit" class="btn">Send Message</button>
+				<form action="php/send_mail.php" method="POST">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" required />
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required />
+					</div>
+					<div class="form-group">
+						<label for="subject">Subject</label>
+						<input type="text" id="subject" name="subject" required />
+					</div>
+					<div class="form-group">
+						<label for="message">Message</label>
+						<textarea id="message" name="message" rows="5" required></textarea>
+					</div>
+
+					<button type="submit" class="form-btn">Send Message</button>
+
+					<!-- Honeypot field (hidden) -->
+					<input type="text" name="honeypot" style="display: none" />
+
+					<!-- Google reCAPTCHA -->
+					<div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
 				</form>
 			</div>
 		</section>
@@ -162,7 +185,7 @@
 		<!-- Social -->
 		<section class="social section">
 			<div class="container">
-				<p>Follow us on social media for updates and news about our courses.</p>
+				<p>Follow us on social media for updates and news.</p>
 				<div class="social-icons">
 					<a
 						href="https://facebook.com"
@@ -185,37 +208,14 @@
 					>
 						<i class="fa-brands fa-instagram fa-2x"></i>
 					</a>
-					<a
-						href="https://linkdin.com"
-						target="_blank"
-						aria-label="Follow Us On Linkdin"
-						><i class="fa-brands fa-linkedin fa-2x"></i>
-					</a>
-					<a
-						href="https://youtube.com"
-						target="_blank"
-						aria-label="Follow Us On Youtube"
-					>
-						<i class="fa-brands fa-youtube fa-2x"></i>
-					</a>
-					<a
-						href="https://pinterest.com"
-						target="_blank"
-						aria-label="Follow Us On Pinterest"
-					>
-						<i class="fa-brands fa-pinterest fa-2x"></i>
-					</a>
 				</div>
 			</div>
 		</section>
 
+		<section class="projects"></section>
+
 		<footer class="footer">
 			<div class="container footer-flex">
-				<ul class="footer-links">
-					<li><a href="#">Terms</a></li>
-					<li><a href="#">Privacy</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
 				<p>&copy; 2025 BCON Consulting. All right reserved</p>
 			</div>
 		</footer>

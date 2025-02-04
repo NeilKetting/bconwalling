@@ -19,3 +19,28 @@ window.addEventListener("scroll", function () {
 		navbar.classList.remove("navbar-scroll");
 	}
 });
+
+// Carousel
+let currentIndex = 0;
+
+function moveSlide(direction) {
+	const slides = document.querySelectorAll(".carousel-item");
+	slides[currentIndex].classList.remove("active");
+
+	currentIndex += direction;
+
+	if (currentIndex < 0) {
+		currentIndex = slides.length - 1;
+	} else if (currentIndex >= slides.length) {
+		currentIndex = 0;
+	}
+
+	slides[currentIndex].classList.add("active");
+	const offset = -currentIndex * 100; // Move slides
+	document.querySelector(
+		".carousel-inner"
+	).style.transform = `translateX(${offset}%)`;
+}
+
+// Optional: Auto transition every 5 seconds
+setInterval(() => moveSlide(1), 5000);

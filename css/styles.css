@@ -70,7 +70,7 @@ img {
     width: 64px;
     height: 3px;
     background: var(--primary-color);
-    margin: 0 auto 1rem;
+    margin: 0 auto;
 }
 
 .btn {
@@ -205,6 +205,36 @@ img {
 }
 
 /* Hero */
+/* Hero Animation */  
+@keyframes fadeInUp {  
+    0% {  
+        opacity: 0;  
+        transform: translateY(300px);  
+    }  
+    100% {  
+        opacity: 1;  
+        transform: translateY(0);  
+    }  
+}  
+
+/* Animation for Image */  
+@keyframes slideInFromRight {  
+    0% {  
+        transform: translateX(100%);
+        opacity: 0;
+    }  
+    100% {  
+        transform: translateX(0);
+        opacity: 1;
+    }  
+}  
+
+.hero-content {  
+    animation: fadeInUp 0.8s ease-out forwards;  
+    opacity: 0;
+}  
+
+
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), #000 url('../images/bcon_bck.jpg') center center/cover no-repeat;
     padding: 10rem 2rem 4rem 2rem;
@@ -212,7 +242,7 @@ img {
     overflow-x: hidden;
     position: relative;
     height: 700px;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .hero .hero-flex {
@@ -240,6 +270,7 @@ img {
     width: 50%;
     margin-right: -100px;
     margin-bottom: -100px;
+    animation: slideInFromRight 0.8s ease-out forwards;
 }
 
 .hero .frame-decoration {
@@ -430,10 +461,10 @@ img {
 .social {
     background: var(--dark-color);
     color: #fff;
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
     text-align: center;
     font-size: 1.7rem;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .social a {
@@ -461,12 +492,7 @@ img {
     color: #fff;
     border-top: 1px solid #384653;
     padding: 0.5rem 2rem;
-}
-
-.footer-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
 }
 
 .footer a {
@@ -474,7 +500,7 @@ img {
 }
 
 .footer a:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .footer ul {
@@ -483,6 +509,57 @@ img {
     gap: 1rem;
     margin: 2rem 0;
 }
+
+.footer-copy p{
+    display: block;
+    align-items: center;
+}
+
+/* Carousel */
+.carousel {  
+    position: relative;  
+    overflow: hidden;  
+}  
+
+.carousel-inner {  
+    display: flex;  
+    transition: transform 2s ease;  
+}  
+
+.carousel-item {  
+    min-width: 100%;
+    box-sizing: border-box;  
+}  
+
+.carousel img {  
+    width: 100%;  
+    height: auto;  
+}  
+
+.carousel-inner img {  
+    width: 100%; /* Ensures the image takes the full width of the container */  
+    height: auto; /* Maintains aspect ratio */  
+    object-fit: cover; /* This will help crop the image automatically to fit, while covering the entire area */  
+    max-height: 700px; /* Set a maximum height to keep images in line */  
+}  
+
+button {  
+    position: absolute;  
+    top: 50%;  
+    transform: translateY(-50%);  
+    background-color: rgba(255, 255, 255, 0.8);  
+    border: none;  
+    cursor: pointer;  
+    font-size: 24px;  
+}  
+
+button.prev {  
+    left: 10px;  
+}  
+
+button.next {  
+    right: 10px;  
+}  
 
 /* Innher Header */
 .inner-header {
@@ -498,40 +575,67 @@ img {
     margin-bottom: 1rem;
 }
 
-/* Contact Form */
-
-.contact-form.section {
-    margin: 2rem 4rem 0 0;
+/* Contact Us Page */  
+.contact {
+    background-color: var(--light-color);  
+    padding: 8rem 2rem 4rem 2rem;  
+    text-align: center;  /* This centers inline-level elements like button */  
+    position: relative;
 }
 
-.contact-form p {
-    margin-bottom: 2rem;
+.contact h2 {  
+    font-size: 2.5rem;  
+    color: var(--primary-color);  
+    margin-bottom: 1rem;  
+}  
+
+.contact p {  
+    font-size: 1.2rem;  
+    margin-bottom: 2rem;  
+}  
+
+.form-group {  
+    margin-bottom: 1.5rem;  
+}  
+
+.form-group label {  
+    display: block;  
+    font-weight: bold;  
+    color: var(--dark-color);  
+    margin-bottom: 0.5rem;  
 }
 
-.background-alternate{
-    background-color: rgba(0, 0, 0, 0.03);
+/* Adjust width and add drop shadow */  
+input[type="text"],  
+input[type="email"],  
+textarea {  
+    width: 600px !important; /* Desired input width */  
+    max-width: 100%; /* Ensure it is responsive */  
+    padding: 10px; /* Add some padding for better appearance */  
+    font-size: 16px; /* Adjust font size */  
+    border: 1px solid #ccc; /* Add a border */  
+    border-radius: 5px; /* Round the corners */  
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Drop shadow */  
+    resize: none;
 }
 
-.contact-form input, .contact-form textarea {
-    display: block;
-    font-family: inherit;
-    font-size: medium;
-    width: 100%;
-    margin: 1.5rem 0;
-    border: 1px solid #ccc;
-    padding: 1.2rem 1rem;
+.form-btn{
+    margin-top: 2.5rem;
+    position: relative;
+    padding: 1.3rem 2.3rem;
+    border: 1px solid var(--light-color);
+    border-radius: 32px;
+    background: var(--primary-color);
+    color: var(--light-color);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;  
+    transition: all 0.2s;
 }
 
-.contact-form textarea {
-    height: 200px;
-}
-
-.contact-form .btn {
-    display: block;
-    width: 100%;
-    font-size: inherit;
-    font-family: inherit;
-    margin: 0 auto;
+.form-btn:hover {
+    background: rgba(rgb(255, 230, 3), green, blue, alpha) ;
+    color: rgba(rgb(0, 0, 0), green, blue, alpha);
 }
 
 /* Location */
@@ -570,6 +674,10 @@ img {
 
 .contact-details i{
     color: red;
+}
+
+.contact-details h3{
+    margin-left: 10px;
 }
 
 .contact-details p {
@@ -668,10 +776,11 @@ img {
 
     .footer {
         padding: 0.5rem 1rem;
+        font-size: 1rem;
     }
 
     .social p {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .social i {
@@ -682,6 +791,12 @@ img {
         flex-direction: column;
         text-align: center;
     }
+
+
+    .profile p, .service p, .summary p, .info p{
+        font-size: 1rem;
+    }
+
 }
 
 @media(max-width: 576px) {
@@ -695,7 +810,8 @@ img {
     }
 
     .hero img {
-        max-width: 350px;
+        width: 350px;
+        
     }
 
     .topics {
