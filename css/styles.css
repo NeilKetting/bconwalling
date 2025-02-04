@@ -297,10 +297,6 @@ img {
     transform: scale(1.1);
 }
 
-.section.service {
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
 .topic h3 {
     font-size: 1rem;
     font-weight: 700;
@@ -308,6 +304,10 @@ img {
 }
 
 /* Services Cards */
+
+.service{
+    background-color: rgba(0, 0, 0, 0.03);
+}
 
 .section.service{    
     background-color: rgba(0, 0, 0, 0.03);
